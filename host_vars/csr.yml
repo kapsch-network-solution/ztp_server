@@ -1,5 +1,5 @@
 ansible_host: 100.64.0.101
-ztp_sn: 9YLG8TJ125I
+ztp_sn: 9GLRGDOQH9H
 ztp_template: csr1000v
 ztp_interface:  gi1
 ztp_ip: 100.64.0.101

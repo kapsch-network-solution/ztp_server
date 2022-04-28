@@ -4,16 +4,13 @@ import yaml
 import os
 
 # This is the directory where a yaml file for every device should be located.
-#ansible_host_dir = "/home/paul/ENAUI/ansible/host_vars/"
-ansible_host_dir = "/home/paul/ENAUI/ansible/host_vars"
+ansible_host_dir = "./host_vars"
 
-
-app = Flask(__name__)
+app = Flask('__name__')
 
 @app.route('/')
 def hello():
     return 'Info coming soon'
-
 
 @app.route('/get-config')
 def get_config():
@@ -37,7 +34,6 @@ def get_config():
 @app.route('/ztp.py')
 def ztp():
     return render_template('template_ztp_script.tmpl',server=request.host)
-
 
 @app.route('/ztp3.py')
 def ztp3():

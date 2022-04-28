@@ -2,6 +2,10 @@
 
 A small ztp_Server written in python with flask that allows to onboard IOS-XE devices
 
+![Image of ztp process(https://ibb.com/9n4nd9J)
+
+
+
 ## Requirements
 netmiko==3.2.0
 
@@ -30,3 +34,10 @@ install dependencies
 ```
 pip install -r requirements.txt 
 ```
+
+
+## Flask
+
+export FLASK_APP=main
+export FLASK_ENV=development
+flask run --host=0.0.0.0
