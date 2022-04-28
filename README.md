@@ -43,9 +43,11 @@ export FLASK_ENV=development
 flask run --host=0.0.0.0
 ```
 
-## DHCP
+## DHCP for ZTP
 
-option 67 http://<serverip>:<port>/ztp3.py
+ZTP client needs to get the path to the python file via DHCP option 67
+
+option 67 http://serverip:port/ztp3.py
 
 Port in default is 5000
 
