@@ -44,7 +44,7 @@ flask run --host=0.0.0.0
 
 ## Backend files
 
-templates/host_vars/<devicename>.yml
+**templates/host_vars/<devicename>.yml
 
 ```
 ansible_host: 100.64.0.101
@@ -64,5 +64,32 @@ ztp_gw: 100.64.0.1
 loopback_ip: 1.1.1.1
 ```
 
+**templates/template_<templatename>.tmpl
 
+all attributes from device yml can be used for redering (device_data.<attributename>) 
+````
+!config template for 1000v with serial {{ device_data.ztp_sn}}
+
+int {{ device_data.ztp_interface}}
+no shut
+ip add {{ device_data.ztp_ip}} {{ device_data.ztp_mask}}
+
+ip route 0.0.0.0 0.0.0.0 {{ device_data.ztp_gw}}
+
+hostname router
+
+ip domain-name lab.local
+
+crypto key generate rsa mod 2048
+
+aaa new-model
+aaa authentication login default local
+aaa authentication enable default none
+
+username admin secret cisco
+
+line vty 0 15
+privilege level 15
+```
+  
  
