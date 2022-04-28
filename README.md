@@ -2,7 +2,7 @@
 
 A small ztp_Server written in python with flask that allows to onboard IOS-XE devices
 
-![Image of ztp process](https://i.ibb.co/fMNMTYb/ztp-server.png)
+![Image of ztp process](https://i.ibb.co/hmJgyCk/ztp-server.png)
 
 
 
