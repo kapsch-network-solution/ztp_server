@@ -1,6 +1,7 @@
 # ztp_server
 
-A small ztp_Server written in python with flask that allows to onboard IOS-XE devices
+A small ztp_server written in python with flask that allows to onboard IOS-XE devices. It uses jinja templates and ansible host files in the backend.
+Tested with CSR1000V (17.3X and 16.12.X)
 
 ![Image of ztp process](https://i.ibb.co/hmJgyCk/ztp-server.png)
 
@@ -41,6 +42,14 @@ export FLASK_APP=main
 export FLASK_ENV=development
 flask run --host=0.0.0.0
 ```
+
+## DHCP for ZTP
+
+ZTP client needs to get the path to the python file via DHCP option 67
+
+option 67 http://serverip:port/ztp3.py
+
+Port in default is 5000
 
 ## Backend files
 
