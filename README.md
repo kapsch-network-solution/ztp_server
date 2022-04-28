@@ -43,6 +43,12 @@ export FLASK_ENV=development
 flask run --host=0.0.0.0
 ```
 
+## DHCP
+
+option 67 http://<serverip>:<port>/ztp3.py
+
+Port in default is 5000
+
 ## Backend files
 
 ### templates/host_vars/<devicename>.yml
