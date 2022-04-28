@@ -20,7 +20,7 @@ while config == 0:
 
 	if response == "err_no_config":
 		print('*** No config found, repeat process ***')
-		cli.clip('ping 127.0.0.1 repeat 30')
+		cli.execute('ping 127.0.0.1 repeat 30')
 	else:
 		config = 1
 
