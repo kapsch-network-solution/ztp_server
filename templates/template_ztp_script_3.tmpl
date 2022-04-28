@@ -18,7 +18,7 @@ while config == 0:
 	print('*** Get config from ' + url)
 	response = urllib.request.urlopen(url).read().decode('utf-8')
 
-	if response == "No device input given":
+	if response == "err_no_config":
 		print('*** No config found, repeat process ***')
 		cli.clip('ping 127.0.0.1 repeat 30')
 	else:

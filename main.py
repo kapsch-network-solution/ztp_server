@@ -29,7 +29,7 @@ def get_config():
            if device['ztp_sn'] == data[1][3:]:
                return render_template("template_" + device['ztp_template']+".tmpl",device_data=device)
 
-       return "!# Serial -" + data[1][3:] + "- not found !"
+       return "err_no_config"
 
 @app.route('/ztp.py')
 def ztp():
