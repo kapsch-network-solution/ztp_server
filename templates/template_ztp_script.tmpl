@@ -1,0 +1,17 @@
+print '*** Sample ZTP Day0 Python Script ***'
+
+import cli
+import urllib2
+
+cli_command = 'show license udi'
+device_info = cli.execute(cli_command)
+
+print '*** Get config ***'
+response = urllib2.urlopen('http://{{ server }}/get-config?device='+device_info[5:])
+
+
+print '*** Configuring device ****'
+cli.configurep(response.readlines())
+
+
+print '*** ZTP Day0 Python Script Execution Complete ***'

@@ -1,0 +1,8 @@
+ansible_host: 100.64.0.101
+ztp_sn: 9YLG8TJ125I
+ztp_template: csr1000v
+ztp_interface:  gi1
+ztp_ip: 100.64.0.101
+ztp_mask: 255.255.255.0
+ztp_gw: 100.64.0.1
+loopback_ip: 1.1.1.1

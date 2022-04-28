@@ -1,0 +1,23 @@
+print('*** Sample ZTP Day0 Python Script ***')
+
+import cli
+import urllib.request
+
+cli_command = 'show license udi'
+device_info = cli.execute(cli_command)
+
+print('*** Get config ***')
+#response = urllib.request.urlopen('http://{{ server }}/get-config?device='+device_info[5:])
+
+
+url = 'http://{{ server }}/get-config?device='+device_info[5:]
+
+print('*** Get config from ' + url)
+response = urllib.request.urlopen(url).read().decode('utf-8')
+
+print('*** Configuring device ****')
+#cli.configurep(response.readlines().decode('utf-8'))
+cli.configurep(response.split('\n'))
+
+
+print('*** ZTP Day0 Python Script Execution Complete ***')
