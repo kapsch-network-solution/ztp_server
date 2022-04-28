@@ -7,13 +7,11 @@ A small ztp_Server written in python with flask that allows to onboard IOS-XE de
 
 
 ## Requirements
-netmiko==3.2.0
+Flask==2.0.3
 
-paramiko==2.7.1
+Jinja2==3.0.3
 
-prettytable==0.7.2
-
-pyaml==20.4.0
+PyYAML==6.0
 
 ## Installation
 
@@ -36,12 +34,35 @@ pip install -r requirements.txt
 ```
 
 
-## Flask
+## Run Flask webservice
 
 ```
 export FLASK_APP=main
-
 export FLASK_ENV=development
-
 flask run --host=0.0.0.0
 ```
+
+## Backend files
+
+templates/host_vars/<devicename>.yml
+
+```
+ansible_host: 100.64.0.101
+  
+#ztp_sn is mandatory
+ztp_sn: 9GLRGDOQH9H
+  
+#ztp_template is mandatory and file 
+#templates/template_<templatename>.tmpl must exits
+ztp_template: csr1000v
+  
+#all other ztp_ entries can be difined as you wish
+ztp_interface:  gi1
+ztp_ip: 100.64.0.101
+ztp_mask: 255.255.255.0
+ztp_gw: 100.64.0.1
+loopback_ip: 1.1.1.1
+```
+
+
+ 
