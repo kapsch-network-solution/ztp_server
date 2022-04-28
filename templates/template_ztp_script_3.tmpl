@@ -6,9 +6,9 @@ import urllib.request
 cli_command = 'show license udi'
 device_info = cli.execute(cli_command)
 
-config=false
+config = 0 
 
-while(config == false)
+while config == 0:
 
 	print('*** Get config ***')
 	#response = urllib.request.urlopen('http://{{ server }}/get-config?device='+device_info[5:])
@@ -18,11 +18,11 @@ while(config == false)
 	print('*** Get config from ' + url)
 	response = urllib.request.urlopen(url).read().decode('utf-8')
 
-	if(response == "No device input given")
+	if response == "No device input given":
 		print('*** No config found, repeat process ***')
 		cli.clip('ping 127.0.0.1 repeat 30')
-	else
-		config = true
+	else:
+		config = 1
 
 print('*** Configuring device ****')
 #cli.configurep(response.readlines().decode('utf-8'))
