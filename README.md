@@ -44,7 +44,7 @@ flask run --host=0.0.0.0
 
 ## Backend files
 
-**templates/host_vars/<devicename>.yml
+###templates/host_vars/<devicename>.yml
 
 ```
 ansible_host: 100.64.0.101
@@ -64,7 +64,7 @@ ztp_gw: 100.64.0.1
 loopback_ip: 1.1.1.1
 ```
 
-**templates/template_<templatename>.tmpl
+###templates/template_<templatename>.tmpl
 
 all attributes from device yml can be used for redering (device_data.<attributename>) 
 ````
