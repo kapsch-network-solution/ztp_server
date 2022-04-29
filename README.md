@@ -1,3 +1,5 @@
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/kapsch-network-solution/ztp_server)
+
 # ztp_server
 
 A small ztp_server written in python with flask that allows to onboard IOS-XE devices. It uses jinja templates and ansible host files in the backend.
