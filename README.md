@@ -102,6 +102,4 @@ username admin secret cisco
 line vty 0 15
 privilege level 15
 ```
-
-### templates/template_<templatename>.tmpl
  
