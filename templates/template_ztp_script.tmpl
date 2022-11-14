@@ -1,4 +1,4 @@
-print '*** Sample ZTP Day0 Python Script ***'
+print '*** Sample ZTP Day0 Python Script  - V2 ***'
 
 import cli
 import urllib2
@@ -6,9 +6,19 @@ import urllib2
 cli_command = 'show license udi'
 device_info = cli.execute(cli_command)
 
-print '*** Get config ***'
-response = urllib2.urlopen('http://{{ server }}/get-config?device='+device_info[5:])
+config = 0
 
+while config == 0:
+
+        print '*** Get config ***'
+	response = urllib2.urlopen('http://{{ server }}/get-config?device='+device_info[5:])
+
+        if 'err_no_config' in response.read():
+                print '*** No config found, repeat process ***'
+                cli.execute('ping 127.0.0.1 repeat 30')
+        else:
+                print '*** Config found !! ***'
+                config = 1
 
 print '*** Configuring device ****'
 cli.configurep(response.readlines())
